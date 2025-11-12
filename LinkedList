@@ -1,0 +1,63 @@
+/*
+📌 What is Linked List?
+
+A Linked List is a linear data structure where elements are stored in nodes, and each node contains:
+| Field  | Description            |
+| ------ | ---------------------- |
+| `data` | value                  |
+| `next` | reference to next node |
+
+
+🧠 Why Linked List if Array Exists?
+| Array                                | Linked List                               |
+| ------------------------------------ | ----------------------------------------- |
+| Fixed size                           | Dynamic size                              |
+| Contiguous memory needed             | No need contiguous memory                 |
+| Insertion/deletion costly (shifting) | Easy insertion/deletion (change pointers) |
+| Fast access O(1)                     | Slow access O(n) traversal                |
+
+daigram
+[10|*] -> [20|*] -> [30|*] -> null
+
+ */
+
+
+
+// Node class - yeh ek node ka blueprint hai
+class Node {
+    int data;      // yaha node ka data/value store hota hai
+    Node next;     // yaha next node ka address/link store hota hai
+
+    // Constructor - jab new Node banega, ye run hoga
+    Node(int data) {
+        this.data = data;    // current node me value store karo
+        this.next = null;    // shuru me koi link nahi hota (last node null hoti)
+    }
+}
+
+public class L1 {
+    public static void main(String[] args) {
+
+        // 3 nodes banaye, jisme values store hongi
+        Node n1 = new Node(10);  // Node with data 10
+        Node n2 = new Node(20);  // Node with data 20
+        Node n3 = new Node(30);  // Node with data 30
+
+        // Ab in nodes ko chain ki tarah connect kar rahe
+        n1.next = n2;  // first node ka next -> second node
+        n2.next = n3;  // second node ka next -> third node
+        // n3.next = null kyuki last node hamesha null hoti hai (default)
+
+        // head - list ka start store karta hai (train ka pehla coach)
+        Node head = n1;
+
+        // temp pointer use karte traversal ke liye (head ko move nahi karte)
+        Node temp = head;
+
+        // Jab tak temp null nahi hota, matlab list khatam nahi hui
+        while(temp != null) {
+            System.out.println(temp.data); // current node ka data print karo
+            temp = temp.next;              // next node par move karo (coach to coach)
+        }
+    }
+}
