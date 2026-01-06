@@ -1,0 +1,65 @@
+1. Bubble Sort (MOST COMMON)
+Idea (Simple)
+
+Compare adjacent elements
+
+Swap if order is wrong
+
+Largest element moves to the end in each pass
+
+
+
+public class Main {
+    public static void main(String[] args) {
+
+        int[] arr = {5, 1, 4, 2, 8};
+        int n = arr.length;
+
+        int swapCount = 0;     // Step 1: total swaps count
+
+        // Step 2: Outer loop → number of passes
+        for (int i = 0; i < n - 1; i++) {
+
+            boolean swapped = false;  // Step 3: check if any swap happens in this pass
+
+            // Step 4: Inner loop → compare adjacent elements
+            for (int j = 0; j < n - 1 - i; j++) {
+
+                // Step 5: If left element is bigger → swap
+                if (arr[j] > arr[j + 1]) {
+
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+
+                    swapCount++;      // Step 6: increase swap count
+                    swapped = true;   // Step 7: mark that swap happened
+                }
+            }
+
+            // Step 8: If no swap in this pass → already sorted
+            if (!swapped) {
+                break;
+            }
+        }
+
+        // Step 9: Print sorted array
+        System.out.print("Sorted Array: ");
+        for (int x : arr) {
+            System.out.print(x + " ");
+        }
+
+Time Complexity
+
+Best: O(n)
+
+Average/Worst: O(n²)
+
+Interview Q
+
+Q: Why bubble sort is slow?
+A: Because it compares elements repeatedly using nested loops.
+        // Step 10: Print total swaps
+        System.out.println("\nTotal Swaps: " + swapCount);
+    }
+}
