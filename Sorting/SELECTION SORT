@@ -1,3 +1,18 @@
+🔹 What is Selection Sort? (Say this)
+
+Selection Sort repeatedly finds the minimum element from the unsorted part and places it at the correct position.
+
+🧠 KEY IDEA (VERY IMPORTANT)
+
+Bubble Sort → swap again & again
+
+Selection Sort → only ONE swap per pass
+
+
+
+
+
+
 public class Main {
     public static void main(String[] args) {
 
@@ -35,3 +50,9 @@ public class Main {
         }
     }
 }
+
+Q1️⃣ Time Complexity?
+
+Best: O(n²)
+Average: O(n²)
+Worst: O(n²)
