@@ -1,0 +1,37 @@
+public class Main {
+    public static void main(String[] args) {
+
+        // Step 1: Declare and initialize array
+        int[] arr = {64, 25, 12, 22, 11};
+
+        // Step 2: Outer loop
+        // This loop decides the position where the smallest element will be placed
+        for (int i = 0; i < arr.length - 1; i++) {
+
+            // Step 3: Assume current index has the minimum element
+            int minIndex = i;
+
+            // Step 4: Inner loop
+            // This loop finds the minimum element from the unsorted part
+            for (int j = i + 1; j < arr.length; j++) {
+
+                // Step 5: Compare current element with assumed minimum
+                if (arr[j] < arr[minIndex]) {
+                    // Step 6: Update minIndex if smaller element found
+                    minIndex = j;
+                }
+            }
+
+            // Step 7: Swap after inner loop
+            // Now we are sure which element is the smallest
+            int temp = arr[minIndex];
+            arr[minIndex] = arr[i];
+            arr[i] = temp;
+        }
+
+        // Step 8: Print sorted array
+        for (int x : arr) {
+            System.out.print(x + " ");
+        }
+    }
+}
