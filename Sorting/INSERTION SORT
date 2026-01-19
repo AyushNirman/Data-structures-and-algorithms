@@ -1,0 +1,101 @@
+class Main {
+    public static void main(String[] args) {
+
+        // Given array
+        int[] a = {5, 3, 4, 1};
+
+        // Loop starts from index 1
+        // Because first element is already considered sorted
+        for (int i = 1; i < a.length; i++) {
+
+            // key = current element
+            // Is element ko sahi jagah insert karna hai
+            int key = a[i];
+
+            // j = index just before key
+            // Left side ke elements check karne ke liye
+            int j = i - 1;
+
+            // Jab tak:
+            // 1) j array ke andar hai (j >= 0)
+            // 2) left element key se bada hai
+            while (j >= 0 && a[j] > key) {
+
+                // Bade element ko ek step right shift karo
+                a[j + 1] = a[j];
+
+                // Eye ko ek step left le jao
+                j--;
+            }
+
+            // Jab loop rukta hai:
+            // Ya toh j = -1 ho gaya (left me kuch nahi bacha)
+            // Ya a[j] <= key mil gaya
+            // Dono case me key ko j+1 position pe insert karte hain
+            a[j + 1] = key;
+        }
+
+        // Sorted array print
+        for (int x : a) {
+            System.out.print(x + " ");
+        }
+    }
+}
+
+
+
+
+
+
+🧠 NOTE (Notebook ke liye short points)
+key = a[i]        → jo element insert karna hai
+j = i - 1         → left side check
+a[j+1] = a[j]     → shift right
+j--               → left move
+j = -1            → key sabse aage jayegi
+a[j+1] = key      → insert
+
+
+
+
+
+
+🎤 INTERVIEW QUESTIONS (MOST ASKED)
+Q1️⃣ What is Insertion Sort?
+
+Answer:
+
+It sorts elements by inserting each element into its correct position in the sorted part.
+
+Q2️⃣ Time Complexity?
+
+Best Case: O(n) (already sorted)
+
+Average Case: O(n²)
+
+Worst Case: O(n²)
+
+Q3️⃣ Is Insertion Sort Stable?
+
+✅ Yes
+
+Q4️⃣ Is it In-place?
+
+✅ Yes (no extra memory)
+
+Q5️⃣ When to use Insertion Sort?
+
+For small datasets or nearly sorted arrays.
+
+Q6️⃣ Difference: Bubble vs Insertion?
+Bubble Sort	Insertion Sort
+Repeated swaps	Shifts + insert
+Slower	Faster
+Less practical	More practical
+🧠 ONE-LINE INTERVIEW IMPRESSION 
+
+
+
+
+
+“Insertion sort works well for small or nearly sorted arrays and is stable and in-place.”
