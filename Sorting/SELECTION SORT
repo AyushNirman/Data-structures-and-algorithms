@@ -56,3 +56,11 @@ Q1️⃣ Time Complexity?
 Best: O(n²)
 Average: O(n²)
 Worst: O(n²)
+
+
+| Bubble Sort         | Selection Sort       |
+| ------------------- | -------------------- |
+| Many swaps          | Only 1 swap per pass |
+| Compare neighbors   | Compare with minimum |
+| Largest moves right | Smallest moves left  |
+
